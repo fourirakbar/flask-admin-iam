@@ -1,0 +1,224 @@
+body, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, .btn-simple, .alert, a, .td-name, td, button.close{
+	font-family: "Segoe UI";
+}
+
+.main-panel{
+	padding-top: 70px;
+}
+
+.navbar-white{
+	background-color: #fff;
+	box-shadow: none;
+}
+
+.sidebar .logo{
+	padding-left: 20px;
+	padding-top: 30px;
+}
+
+.sidebar .logo:before, .bootstrap-navbar .logo:before
+{
+	background-color: transparent;
+}
+
+.sidebar .user:after
+{
+	background-color: transparent;
+}
+
+.sidebar
+{
+	background-color: #343a40;
+}
+
+.sidebar .collapse .nav,
+.sidebar .collapsing .nav
+{
+	background-color: #2d3238;
+	padding:5px 0px 5px 0px;
+	margin:5px 0px 5px 0px;
+	
+}
+
+#sidebar { overflow: hidden; }
+#sidebar:hover { overflow: overlay; }
+
+.sidebar .user{
+
+	background-color: #2d3238;
+	padding:10px 0px;
+	border:none;
+}
+
+.sidebar .user .info .nav a{
+	color:#ccc;
+}
+
+.sidebar .user .info .nav a:hover{
+	color:#fff;
+}
+
+.user-login{
+	height: auto;
+	background-color: #2d3238;
+	padding:20px 0px;
+}
+
+.user-login .photo{
+	height: 100px;
+	padding-left: 80px;
+	margin-bottom: 10px;
+}
+
+.user-login .photo img{
+	width: 50px;
+	border-radius: 50%;
+	height: 50px;
+}
+
+.user-login .info{
+	text-align: center;
+}
+
+.user-login .info a
+{
+	color: white;
+}
+
+.sidebar
+{
+	z-index: 5;
+}
+
+@media screen and (min-width: 1024px) {
+	.main-panel .navbar
+	{
+		position: fixed;
+		z-index: 4;
+		padding-left: 260px;
+	}
+}
+
+
+
+#sidebar::-webkit-scrollbar {
+	width: 14px;s
+}
+#sidebar::-webkit-scrollbar-thumb {
+	height: 6px;
+	border: 4px solid rgba(0, 0, 0, 0);
+	background-clip: padding-box;
+	-webkit-border-radius: 7px;
+	background-color: #555;
+}
+#sidebar::-webkit-scrollbar-button {
+	width: 0;
+	height: 0;
+	display: none;
+}
+#sidebar::-webkit-scrollbar-corner {
+	background-color: transparent;
+}
+
+
+#sidebar .main-nav{
+	padding-top: 10px;
+}
+
+.navbar{
+	border:none;
+	box-shadow: 0 0px 8px #ccc;
+	opacity: 1;
+}
+
+.card{
+	border:none;
+	border-radius: 0px;
+	box-shadow: 0 1px rgba(0,0,0,.03);
+}
+
+.card.hoverable:hover{
+	box-shadow: 0px 0px 20px #ccc;
+}
+
+.card.hoverable.pop:hover{
+	box-shadow: 0px 0px 20px #ccc;
+	transform: translateY(-2px);
+}
+
+.sidebar .nav .nav-item .nav-link i {
+	font-size: 18px;
+	padding-top: 6px;
+	margin-right: 5px;
+	width: 30px;
+	text-align: center;
+	vertical-align: middle;
+	float: left;
+}
+
+.sidebar .nav .nav-item .nav-link
+{
+	padding:5px 10px;
+}
+
+.sidebar .sidebar-wrapper .nav .nav-item [data-toggle="collapse"]~div .nav .nav-item .nav-link {
+	background: transparent;
+	padding-left: 10px;
+	text-transform: capitalize;
+	padding: 5px 15px 5px 10px;
+	font-weight: 400;
+	font-size: 14px;
+}
+
+
+.sidebar{
+
+	box-shadow: 0 0px 8px #ccc;
+}
+
+
+.sidebar .sidebar-wrapper .nav .nav-link p,
+.sidebar .nav .nav-item .nav-link
+{
+	color:#ccc;
+}
+
+.nav-item.active i,
+.sidebar .nav .nav-item .nav-link:hover
+{
+	color: #42a5f5!important;
+}
+
+.sidebar .sidebar-wrapper .nav .nav-link:hover p,
+.sidebar .sidebar-wrapper .nav .nav-item.active .nav-link p
+{
+	color:#fff;
+}
+
+.sidebar.right{
+	right: 0;
+	left: auto;
+	background-color: white; 
+	width : 0px;
+}
+
+.sidebar.right:before {
+    opacity: 1;
+    background: #fff;
+}
+
+.sidebar.right .button-close{
+	padding-top: 10px;
+	padding-right: 10px;
+	margin-bottom: 50px;
+}
+
+a.hoverable{
+	cursor: pointer;
+}
+
+.navbar .nav-item .nav-link img{
+	border-radius: 50%;
+	height: 25px;
+	margin-top: 5px;
+}
