@@ -80,10 +80,11 @@ def table():
 
 	return render_template('table.html', hasil=hasil)
 
-@app.route( '/stream/<id>/<ip>/<user>/<port>', methods=['GET'] )
+@app.route( '/stream/<ip>/<user>/<port>', methods=['GET'] )
 def stream(ip, user, port):
-	# now = datetime.now()
-	# newDirName = now.strftime("%Y_%m_%d")
+	# print "jancok a"
+	now = datetime.datetime.now()
+	newDirName = now.strftime("%Y_%m_%d")
 	proc = subprocess.Popen(
     	# /container-data/2018_05_26/192.168.99.100_5114100003_49178
     	# ['tail -f -c +0 /home/fourirakbar/container-data/2018_05_26/192.168.99.100_5114100003_49178/output_file | mitmdump -nr - --set flow_detail=1 --showhost'],
@@ -173,37 +174,6 @@ def stream(ip, user, port):
 
 @app.route('/lihat/<id>/<ip>/<user>/<port>', methods=['GET'])
 def lihat(id, ip, user, port):
-	query = "SELECT * FROM kontainer WHERE id = '%s'" % (id)
-	cursor.execute(query)
-	hasil = cursor.fetchall()
-	split1 = str(hasil).split("datetime.datetime")[-1]
-	split2 = str(split1).split(")]")[0]
-	split3 = str(split2).split(",")[0]
-	tahun = str(split3).split("(")[1]
-	bulan = str(split2).split(",")[1]
-	hari = str(split2).split(",")[2]
-
-	if int(bulan) < 10:
-		curdate = (tahun+'_0'+bulan+'_'+hari).replace(" ","")
-	else:
-		curdate = (tahun+'_'+bulan+'_'+hari).replace(" ","")	
-
-	username = getpass.getuser()
-	location = '/home/fourirakbar/container-data/'+curdate+'/'+ip+'_'+user+'_'+port
-	os.chdir(location)
-
-	#reploace file sebelumnya
-	# os.system("sh read_file.sh")
-
-	file = ('log_'+ip+'_'+user+'_'+port+'.txt')
-	# urllib.urlretrieve("http://www.google.com", fullfilename)
-	# urllib.urlretrieve(file)
-
-	return send_file(location+'/'+file, attachment_filename=file)
-	# return send_file(location+'/'+file, attachment_filename=file)
-
-@app.route('/download/<id>/<ip>/<user>/<port>', methods=['GET'])
-def download(id, ip, user, port):
 	query = "SELECT * FROM kontainer WHERE id = '%s'" % (id)
 	cursor.execute(query)
 	hasil = cursor.fetchall()

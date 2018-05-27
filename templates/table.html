@@ -135,9 +135,8 @@
                             <td>{{ item[3] }}</td>
                             <td>{{ item[2] }}</td>
                               <td>
-                              <a href="{{ url_for('stream', id=item[0], ip=item[2], user=item[1], port=item[3]) }}" type="submit" class="btn btn-fill btn-default">Stream Log</a>
+                              <a href="{{ url_for('stream', id=item[0], ip=item[2], user=item[1], port=item[3]) }}" type="submit" class="btn btn-fill btn-primary">Stream Log</a>
                               <a href="{{ url_for('lihat', id=item[0], ip=item[2], user=item[1], port=item[3]) }}" type="submit" class="btn btn-fill btn-info">Lihat Log</a>
-                              <a href="{{ url_for('download', id=item[0], ip=item[2], user=item[1], port=item[3]) }}" type="submit" class="btn btn-fill btn-primary">Download Log<a>
                             </td>
                           </tr>
                         {% endfor %}
