@@ -55,7 +55,7 @@ def dashboard():
 @app.route('/table', methods=['GET'])
 def table():
 	query = "select * from kontainer where date(created_at) = curdate()"
-	query = "SELECT * FROM kontainer WHERE created_at "
+	# query = "SELECT * FROM kontainer WHERE created_at "
 	cursor.execute(query)
 	hasil = cursor.fetchall()
 	# print hasil
@@ -202,6 +202,16 @@ def lihat(id, ip, user, port):
 
 	return send_file(location+'/'+file, attachment_filename=file)
 	# return send_file(location+'/'+file, attachment_filename=file)
+
+@app.route('/history', methods=['GET'])
+def history():
+	query = "SELECT * FROM kontainer WHERE created_at "
+	cursor.execute(query)
+	hasil = cursor.fetchall()
+
+	# return hasil
+	return render_template('history.html', hasil=hasil)
+
 
 @app.route('/testing')
 def testing():

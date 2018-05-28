@@ -96,7 +96,7 @@
                 <i class="fa fa-navicon visible-on-sidebar-mini"></i>
               </button>
             </div>
-            <a class="navbar-brand" href="#pablo"> User yang Aktif Hari Ini </a>
+            <a class="navbar-brand" href="#pablo"> Rekap User </a>
           </div>
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar burger-lines"></span>
@@ -123,6 +123,7 @@
                           <th>User</th>
                           <th>Port</th>
                           <th>IP</th>
+                          <th>Tanggal</th>
                           <th class="disabled-sorting">Actions</th>
                         </tr>
                       </thead>
@@ -134,8 +135,8 @@
                             <td>{{ item[1] }}</td>
                             <td>{{ item[3] }}</td>
                             <td>{{ item[2] }}</td>
+                            <td>{{ item[4].strftime('%d - %m - %Y') }}</td>
                               <td>
-                              <a href="{{ url_for('stream', id=item[0], ip=item[2], user=item[1], port=item[3]) }}" type="submit" class="btn btn-fill btn-primary">Stream Log</a>
                               <a href="{{ url_for('lihat', id=item[0], ip=item[2], user=item[1], port=item[3]) }}" type="submit" class="btn btn-fill btn-info">Lihat Log</a>
                             </td>
                           </tr>
