@@ -55,28 +55,10 @@ def dashboard():
 @app.route('/table', methods=['GET'])
 def table():
 	query = "select * from kontainer where date(created_at) = curdate()"
-	# query = "SELECT * FROM kontainer WHERE created_at "
+	
 	cursor.execute(query)
 	hasil = cursor.fetchall()
-	# print hasil
-
-	# array_hasil = []
-	# for data in hasil:
-	# 	print data
-	# 	dict_hasil = {
-	# 		'id': data[0],
-	# 		'nrp': data[1],
-	# 		'ip': data[2],
-	# 		'port': data[3]
-	# 	}
-	# 	array_hasil.append(dict_hasil)
-	
-	# dumps = json.dumps(array_hasil)
-	# return dumps
-	# results = BaseDataTables(request, columns, collection).output_result()
-	# return dumps
-	# return jsonify(results)
-
+	db.commit()
 
 	return render_template('table.html', hasil=hasil)
 
@@ -222,4 +204,4 @@ def page_not_found(e):
 	return render_template('404.html'), 404
 
 if __name__ == '__main__':
-	app.run(debug=True, port=5001)
+	app.run(debug=True, port=5002)
